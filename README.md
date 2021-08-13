@@ -107,7 +107,7 @@ The output of the charge pump, is taken across the 5Mohm load resistor. The diff
 ![post_lay_cp_out](https://github.com/Charaan27/avsddac_1v8_sky130/blob/main/screenshots/post_lay_cp_output.PNG)
 
 # Aknowledgements:
-- Kunal Ghosh, Co-Founder of VLSI System Design (VSD) Corp. Pvt. Ltd.
+- Kunal Ghosh, Co-Founder of VLSI System Design (VSD) Corp. Pvt. Ltd. - kunalghosh@gmail.com
 
 # References:
 - [Design of Charge Pump Circuit for PLL Application: A review](https://www.ijert.org/research/design-of-charge-pump-circuit-for-pll-application-a-review-IJERTV4IS050415.pdf)
