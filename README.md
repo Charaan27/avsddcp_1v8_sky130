@@ -108,3 +108,9 @@ The output of the charge pump, is taken across the 5Mohm load resistor. The diff
 
 # Aknowledgements:
 - Kunal Ghosh, Co-Founder of VLSI System Design (VSD) Corp. Pvt. Ltd.
+
+# References:
+- [Design of Charge Pump Circuit for PLL Application: A review](https://www.ijert.org/research/design-of-charge-pump-circuit-for-pll-application-a-review-IJERTV4IS050415.pdf)
+- [Dynamic gate and substrate control charge pump circuits: a review](https://www.researchgate.net/publication/275247649_Dynamic_gate_and_substrate_control_charge_pump_circuits_a_review)
+- [Design and analysis of different type of charge pump using CMOS technology](https://ieeexplore.ieee.org/document/7732062)
+- [Analysis and design of dickson charge pump for EEPROM in 180nm CMOS technology](https://ieeexplore.ieee.org/document/8354067)
