@@ -1,0 +1,47 @@
+* SPICE3 file created from ipfinal.ext - technology: sky130A
+
+* For better readablitiy nodes of ip_final.spice are renamed with readable names.
+
+.lib "sky130_fd_pr/models/sky130.lib.spice" tt
+
+X0 in in v1 gnd sky130_fd_pr__nfet_01v8 w=1 l=0.15
+X1 v1 clk1 sky130_fd_pr__cap_mim_m3_1 l=100 w=5
+X2 v2 clk2 sky130_fd_pr__cap_mim_m3_1 l=100 w=5
+X3 v3 clk1 sky130_fd_pr__cap_mim_m3_1 l=100 w=5
+
+* Load resistor is added.
+X4 out gnd gnd sky130_fd_pr__res_high_po_0p69 l=9990
+
+X5 v1 v1 v2 gnd sky130_fd_pr__nfet_01v8 w=1 l=0.15
+X6 v2 v2 v3 gnd sky130_fd_pr__nfet_01v8 w=1 l=0.15
+X7 v3 v3 v4 gnd sky130_fd_pr__nfet_01v8 w=1 l=0.15
+X8 v4 v4 out gnd sky130_fd_pr__nfet_01v8 w=1 l=0.15
+X9 v4 clk2 sky130_fd_pr__cap_mim_m3_1 l=100 w=5
+X10 out gnd sky130_fd_pr__cap_mim_m3_1 l=100 w=5
+C0 v2 gnd 3.62fF
+
+* For transient simulation...
+
+v2 clk1 gnd pulse(0 2.1 250n 0 0 250n 500n)
+v3 clk2 gnd pulse(0 2.1 0 0 0 250n 500n)
+
+v1 in gnd dc 1.8
+
+.tran 10e-09 300000e-09 0e-00
+
+.TITLE avsddcp_cp_out
+.control
+run
+
+print allv > plot_data_v1.txt
+print alli > plot_data_i1.txt
+
+set xbrushwidth = 3
+
+plot v(out)
+
+* (For better viewing reduce stop time in tran)
+plot v(clk1) v(clk2)+3
+
+.endc
+.end
