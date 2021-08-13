@@ -1,0 +1,15 @@
+* SPICE3 file created from ip_final.ext - technology: sky130A
+
+.option scale=10000u
+
+X0 a_n45_2# a_n45_2# a_109_1# a_1207_n427# sky130_fd_pr__nfet_01v8 w=100 l=15
+X1 top bot sky130_fd_pr__cap_mim_m3_1 l=100 w=500
+X2 top bot sky130_fd_pr__cap_mim_m3_1 l=100 w=500
+X3 top bot sky130_fd_pr__cap_mim_m3_1 l=100 w=500
+X4 a_109_1# a_109_1# a_262_n1# a_1207_n427# sky130_fd_pr__nfet_01v8 w=100 l=15
+X5 a_262_n1# a_262_n1# a_428_n1# a_1207_n427# sky130_fd_pr__nfet_01v8 w=100 l=15
+X6 a_428_n1# a_428_n1# a_576_n1# a_1207_n427# sky130_fd_pr__nfet_01v8 w=100 l=15
+X7 a_n8_127# a_n8_127# a_n45_2# a_1207_n427# sky130_fd_pr__nfet_01v8 w=100 l=15
+X8 top bot sky130_fd_pr__cap_mim_m3_1 l=100 w=500
+X9 top bot sky130_fd_pr__cap_mim_m3_1 l=100 w=500
+C0 a_262_n1# a_1207_n427# 3.62fF
