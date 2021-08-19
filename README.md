@@ -15,6 +15,19 @@ The block diagram of the proposed Dickson Charge Pump can be found below
 
 ![Dickson block diagram](https://github.com/Charaan27/avsddac_1v8_sky130/blob/main/screenshots/dcp_block_dig.PNG)
 
+# Specifications
+The specifications of the designed Charge Pump can be found below:
+
+| Parameter                   | Symbol | Min Value | Typical Value | Max Value | Unit |
+|-----------------------------|--------|-----------|---------------|-----------|------|
+| Supply Voltage              | Vcc    | 1.7       | 1.8           | 3.5       | V    |
+| Operating Temperature Range | T      | -40       | +27           | +85       | °C   |
+| Reference Frequency         | Fref   | 0.32      | 2             | 10        | MHz  |
+| Input logic-level high      | Vih    | 0.7Vcc    | -             | Vcc+0.3   | V    |
+| Rise Time                   | Trise  | 10        | 15            | 150       | us   |
+| Output voltage              | CP_OUT | 4.3       | 4.7           | 5.5       | V    |
+
+
 # Configurations and Open Souce Tools used:
 - Windows 10 64-bit
 - [Ubuntu 18.04.5](https://releases.ubuntu.com/18.04.5/)
