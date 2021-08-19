@@ -95,7 +95,7 @@ The specifications of the designed Charge Pump can be found below:
   - **Windows**
     - The eSim installer also installs Ngspice, so one can access ngspice by running the **ngspice.exe** file present in the eSim installation folder.  
 
-- ### Sky130 PDK ###:  
+- ### Sky130 PDK ###  
   - **Windows**
     - Download ZIP file or clone this [repository](https://github.com/google/skywater-pdk)  
 
@@ -107,7 +107,7 @@ The specifications of the designed Charge Pump can be found below:
   $ sudo apt-get update
   ```  
   
-- ### Git and Make ### *(Ignore if already installed)*
+- ### Git and Make  *(Ignore if already installed)* ###
   - Install Git and Make using the commands below:  
 
     ```
