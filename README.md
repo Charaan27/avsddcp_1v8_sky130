@@ -54,7 +54,9 @@ The specifications of the designed Charge Pump can be found below:
 - For Linux, clone this repo into the created folder using the command below. Alternatively, if Git bash is installed in Windows, you can also use the below command for cloninig.
 
  ```
+ 
  $ git clone https://github.com/Charaan27/avsddcp_1v8_sky130.git
+ 
  ```  
  
  > NOTE: For cloning in Linux, you should have Git pre-installed. The instructions for Git installation can be found under Layout and Post-Layout section.  
@@ -66,21 +68,27 @@ The specifications of the designed Charge Pump can be found below:
     - Download eSim installer for Linux from this [link](http://esim.fossee.in/downloads) to a local directory and unpack it. You can also unpack the installer through the terminal. Open the terminal and navigate to the directory where this INSTALL file is located. Use the following command to unpack:  
   
       ```
+      
       $ unzip eSim-2.1.zip
+      
       ```
     - To install eSim and other dependencies run the following command:  
   
       ```
+      
       $ cd eSim-2.1
       
       $ chmod +x install-eSim.sh
       
       $ ./install-eSim.sh --install
+      
       ```
     - To run eSim from the terminal, type:  
 
       ```
+      
       $ esim
+      
       ```
       or you can double click on eSim icon created on the Desktop after installation.  
     
@@ -99,12 +107,16 @@ The specifications of the designed Charge Pump can be found below:
     - To make sure that the package is up to date, run the command below in the terminal:  
   
       ```
+      
       $ sudo apt-get update -y
+      
       ```  
     - Now, install ngspice using the command below:  
     
       ```
-      $ sudo apt-get install -y ngspice  
+      
+      $ sudo apt-get install -y ngspice
+      
       ```  
   - **Windows**
     - The eSim installer also installs Ngspice, so one can access ngspice by running the **ngspice.exe** file present in the eSim installation folder.  
@@ -116,9 +128,11 @@ The specifications of the designed Charge Pump can be found below:
     - If you are going to clone the PDK, then first open the folder where you have cloned this project, and run the commands below.  
  
       ```
+      
       $ cd pre_layout
       
       $ git clone https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr
+      
       ```  
       
   - **Linux**
@@ -129,51 +143,65 @@ The specifications of the designed Charge Pump can be found below:
 - Before installing, check whether you are in the root directory:  
 
   ```
+  
   $ cd
+  
   ```  
   
 - First, let us run a check on the versions, using the command below:  
 
   ```
+  
   $ sudo apt-get update
+  
   ```  
   
 - ### Git and Make  *(Ignore if already installed)* ###
   - Install Git and Make using the commands below:  
 
     ```
+    
     $ sudo apt install git
     
     $ sudo apt install make
+    
     ```  
 
 - ### Magic VLSI ###
   - Download Magic using the command below:  
 
     ```
+    
     $ git clone git://opencircuitdesign.com/magic
+    
     ```  
   
   - Now, navigate to the Magic Folder:  
 
     ```
+    
     $ cd magic
+    
     ```  
   
   - Compile and Install:  
 
     ```
+    
     $ sudo ./configure
     
     $ sudo make
     
     $ sudo make install
+    
     ```  
   
   - Exit Magic Directory:  
 
     ```
+    
     $ cd ..
+    
     ```  
   
 - ### Sky130 PDK and Magic Integration ###  
@@ -181,25 +209,31 @@ The specifications of the designed Charge Pump can be found below:
   - First, let us download Sky130 PDK using the following command:  
 
     ```
+    
     $ git clone https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr
+    
     ```  
   
   - Next, we we will need OpenPDK to install & generate the required tech files for magic vlsi:  
 
     ```
+    
     $ git clone git://opencircuitdesign.com/open_pdks
     
     $ cd open_pdks
     
     $ git checkout open_pdks-1.0
+    
     ```  
   
   - Now, we have to configure sky130 PDK:  
 
     ```
+    
     $ mkdir sky130_target
     
     $ sudo ./configure --enable-sky130-pdk=<skywater_root_dir>/skywater-pdk/libraries --with-sky130-local-path=<your_target_install_dir>
+    
     ```     
     
   > NOTE : For those using home directory do NOT use ~/<your_dir>, please use the full directory /home/username/<your_dir>  
@@ -207,32 +241,46 @@ The specifications of the designed Charge Pump can be found below:
   - Next, run the following commands, inside the open_pdks root directory:  
   
     ```
+    
     $ cd sky130
+    
     $ sudo make
+    
     $ sudo make install
+    
     ```  
     
   - Integrate Sky130 PDK with Magic. As the skywater tech files are not installed in magic’s library, we need to create a symbolic link in order to use the tech files for drawing layout. This can be done using:  
   
     ```
+    
     $ sudo ln -s <sky130A_install_root_dir>/sky130A/libs.tech/magic/* /usr/local/lib/magic/sys/
+    
     ```  
   
   - Now, come back to the current working directory, and check whether the files are properly installed using the command below:  
   
     ```
+    
     $ tcsh
+    
     $ sudo magic -T sky130A
+    
     ```  
-  
+
+- ### Next Steps: ###  
+
+  - Now, you should copy the sky130_fd_pr folder into the layout and post_layout files present in the folder where you cloned this project.  
+
 # Pre Layout:  
+
 ## Tools used:  
 The tools used in this stage were:  
 - eSim
-- ngspice
+- Ngspice
 - sky130 pdk  
 
-First, the above tools are required to be installed in the machine, before proceeding further. The respective tools can be installed by referring the manuals whose links have been given in the open source tools section. Instead of cloning the entire Sky130 repo, one can also clone the library file **sky130_fd_pr** alone, as the corners present in this library file are only going to be used. This can be done by running the following command ```$ git clone https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr``` in the terminal.  
+First, the above tools are required to be installed in the machine, before proceeding further. Please refer to the installation section for the step by step instructions.  
 
 ## Circuit:  
 The Dickson Charge Pump consists of the pumping capacitors which are arranged in a parallel fashion, which reduces the output impedance and increases the voltage gain as the number of stages increases. A diode-connected NMOS transistor is used for the construction of this CP. Here Vdd is the power supply voltage, NMOS transistor acts as switches, and V1 is the node voltage at the upper plate of the capacitor. Two clock sources UP and DN which have the same peak voltage, complementary phase, and are non-overlapping are applied to each stage in an alternative manner. When UP is low, DN will be high due to the complementary phase and subsequently, the switch MD1 is turned ON and the first capacitor is charged by the voltage source Vdd to the maximum voltage of Vdd - Vt at node V1. In the next half clock, MD1 turns OFF, and the voltage Vdd provided by UP, gets added to the voltage Vdd - Vt which is already present, and as a result, the voltage at node V2 becomes 2Vdd - Vt. At the same period, the switch MD2 becomes ON and the next capacitor is charged through MD2 by the voltage 2Vdd- Vt, to a maximum voltage of 2Vdd - 2Vt. In this way, the charge gets pumped from one stage to another and the node voltages at pumping capacitors of higher stages increase continuously. The final capacitor doesn’t add any voltage as it is grounded and it smoothens the output. The designed circuit can be found below.  
@@ -257,24 +305,41 @@ The Pre-Layout output image can be found below:
 
 ![CP_OUT](https://github.com/Charaan27/avsddac_1v8_sky130/blob/main/screenshots/pre_lay_cp_output.jpg)  
 
+In order to get the above simulation, please run the command below. Make sure that you are in the project folder.  
+
+```
+$ cd pre_layout
+
+$ ngspice pre_layout_output.cir
+
+```  
+
 # Layout:  
+
 ## Tools used:  
 - Magic
 - Sky130 PDK
-- ngspice
+- Ngspice
 - Open_pdk (for integrating magic with sky130)  
 
-> NOTE : Magic layout tool cannot be used on Windows OS, so one has to install Ubuntu (preferebly Ubuntu 18.04), to perform the simulation. Ubuntu can be installed either by installing [Oracle's Virtualbox](https://www.virtualbox.org/wiki/Downloads), or by using Windows Subsystem Linux (WSL) on Windows or by Dual - Booting Windows with Ubuntu. Installing Ubuntu with VirtualBox is preferred. For more info one can refer this [Udemy Couse](https://www.udemy.com/course/vsd-a-complete-guide-to-install-open-source-eda-tools/) by Mr. Kunal Ghosh.  
+Please note that you are required to install the above tools to view the simulations. You can refer the installation section for a detailed note.
 
-Utmost care should be given during the installation of the tools, especially during the Magic + Sky130 integration part. One can refer this [blog](https://lootr5858.wordpress.com/2020/10/06/magic-vlsi-skywater-pdk-local-installation-guide/) to perform the installation.  
+> NOTE: As soon as you complete your layout and post-layout tools installation, you are required to copy the sky130_fd_pr folder into the layout and post_layout folder.
 
-After the installation, create a new directory to perform the layout. This directory can be created anywhere as per the users wish, by entering the following command ```mkdir dir_name``` in the terminal.  
+The tech file that is used in this design is sky130A.tech. This file is present inside the layout folder. This file can also be obtained throught this [link](https://github.com/vsdip/avsddac_3v3_sky130_v2/blob/main/Layout%20files/sky130A.tech). The contents of this file are required to be present inside the layout with the extension .tech.  
 
-> NOTE : Your newly created directory must contain the sky130_fd_pr folder. Copy that folder into this new directory.  
+The magic layout with the tech file can be launched using the command  
 
-The tech file that is used in this design is sky130A.tech. This can be obtained throught this [link](https://github.com/vsdip/avsddac_3v3_sky130_v2/blob/main/Layout%20files/sky130A.tech). The contents of this file are required to be present inside the newly created directory with the ext .tech.  
+```
+# Coming back to the project directory
 
-The magic layout with the tech file can be launched using the command ```magic -T sky130A.tech```  
+$ cd ..
+
+$ cd layout
+
+$ magic -T sky130A.tech
+
+```    
 
 ## Capacitor:  
 A total of five capacitors are used for a four stage Dickson Charge Pump. The Magic Layout of the capacitor used in our design is shown below.  
@@ -293,6 +358,15 @@ The overall layout of the circuit can be found below.
 
 ![magic_circuit_layout](https://github.com/Charaan27/avsddac_1v8_sky130/blob/main/screenshots/magic_circuit_layout.PNG)  
 
+In order to view the layout enter the command below. Please note that you should be inside the layout folder.  
+
+```
+$ cd layout
+
+$ magic ip_final.mag
+
+```  
+
 > NOTE: The magic layout of the circuit, was carefully made in a way such that no DRC errors would pop up. Based on the DRC errors that came with the consideration of initial model parameters, the model parameters (mainly w and l) were altered such that no DRC errors would appear.  
 
 # Post - Layout:  
@@ -308,10 +382,34 @@ The output of the charge pump, is taken across the 5Mohm load resistor. The diff
 
 ![post_lay_cp_out](https://github.com/Charaan27/avsddac_1v8_sky130/blob/main/screenshots/post_lay_cp_output.PNG)  
 
+To run the post layout simulation enter the following commands.  
+
+```
+# Coming back to the project directory
+
+$ cd .. 
+
+$ cd post_layout
+
+$ ngspice ip_final_test.spice
+
+```  
+
+# Future Work  
+
+- Design a Phase Frequency Detector (PFD) circuit, compatible for PLL applications.
+- Work on prospects to reduce area of Dickson Charge Pump circuit.
+
+# Author  
+
+- Charaan S, Student at Madras Institute of Technology, Anna University. - kumarcharaan27@gmail.com  
+
 # Aknowledgements:  
+
 - Kunal Ghosh, Co-Founder of VLSI System Design (VSD) Corp. Pvt. Ltd. - kunalghosh@gmail.com  
 
 # References:  
+
 - [Design of Charge Pump Circuit for PLL Application: A review](https://www.ijert.org/research/design-of-charge-pump-circuit-for-pll-application-a-review-IJERTV4IS050415.pdf)
 - [Dynamic gate and substrate control charge pump circuits: a review](https://www.researchgate.net/publication/275247649_Dynamic_gate_and_substrate_control_charge_pump_circuits_a_review)
 - [Design and analysis of different type of charge pump using CMOS technology](https://ieeexplore.ieee.org/document/7732062)
