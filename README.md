@@ -72,7 +72,9 @@ The specifications of the designed Charge Pump can be found below:
   
       ```
       $ cd eSim-2.1
+      
       $ chmod +x install-eSim.sh
+      
       $ ./install-eSim.sh --install
       ```
     - To run eSim from the terminal, type:  
@@ -115,6 +117,7 @@ The specifications of the designed Charge Pump can be found below:
  
       ```
       $ cd pre_layout
+      
       $ git clone https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr
       ```  
       
@@ -140,6 +143,7 @@ The specifications of the designed Charge Pump can be found below:
 
     ```
     $ sudo apt install git
+    
     $ sudo apt install make
     ```  
 
@@ -160,7 +164,9 @@ The specifications of the designed Charge Pump can be found below:
 
     ```
     $ sudo ./configure
+    
     $ sudo make
+    
     $ sudo make install
     ```  
   
@@ -182,7 +188,9 @@ The specifications of the designed Charge Pump can be found below:
 
     ```
     $ git clone git://opencircuitdesign.com/open_pdks
+    
     $ cd open_pdks
+    
     $ git checkout open_pdks-1.0
     ```  
   
@@ -190,11 +198,12 @@ The specifications of the designed Charge Pump can be found below:
 
     ```
     $ mkdir sky130_target
+    
     $ sudo ./configure --enable-sky130-pdk=<skywater_root_dir>/skywater-pdk/libraries --with-sky130-local-path=<your_target_install_dir>
-    ```   
+    ```     
     
-> NOTE: For those using home directory, do NOT use ~/<your_dir>, please use the full directory: /home/<username>/<your_dir>      
-    
+  > NOTE : For those using home directory do NOT use ~/<your_dir>, please use the full directory /home/username/<your_dir>  
+ 
   - Next, run the following commands, inside the open_pdks root directory:  
   
     ```
