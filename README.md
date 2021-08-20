@@ -123,7 +123,7 @@ The specifications of the designed Charge Pump can be found below:
  $ git clone https://github.com/Charaan27/avsddcp_1v8_sky130.git
  ```  
  
- > NOTE: For cloning in Linux, you should have Git pre-installed. The instructions for Git installation can be found under Layout and Post-Layout section.  
+ > NOTE: For cloning in Linux, you should have Git pre-installed. The instructions for Git installation can be found under [Layout and Post-Layout section](#git-and-make--ignore-if-already-installed).  
  
 ## Pre Layout:  
 
