@@ -54,9 +54,7 @@ The specifications of the designed Charge Pump can be found below:
 - For Linux, clone this repo into the created folder using the command below. Alternatively, if Git bash is installed in Windows, you can also use the below command for cloninig.
 
  ```
- 
  $ git clone https://github.com/Charaan27/avsddcp_1v8_sky130.git
- 
  ```  
  
  > NOTE: For cloning in Linux, you should have Git pre-installed. The instructions for Git installation can be found under Layout and Post-Layout section.  
@@ -68,27 +66,21 @@ The specifications of the designed Charge Pump can be found below:
     - Download eSim installer for Linux from this [link](http://esim.fossee.in/downloads) to a local directory and unpack it. You can also unpack the installer through the terminal. Open the terminal and navigate to the directory where this INSTALL file is located. Use the following command to unpack:  
   
       ```
-      
-      $ unzip eSim-2.1.zip
-      
+      $ unzip eSim-2.1.zip    
       ```
     - To install eSim and other dependencies run the following command:  
   
-      ```
-      
+      ```      
       $ cd eSim-2.1
       
       $ chmod +x install-eSim.sh
       
-      $ ./install-eSim.sh --install
-      
+      $ ./install-eSim.sh --install     
       ```
     - To run eSim from the terminal, type:  
 
       ```
-      
-      $ esim
-      
+      $ esim     
       ```
       or you can double click on eSim icon created on the Desktop after installation.  
     
@@ -107,16 +99,12 @@ The specifications of the designed Charge Pump can be found below:
     - To make sure that the package is up to date, run the command below in the terminal:  
   
       ```
-      
-      $ sudo apt-get update -y
-      
+      $ sudo apt-get update -y     
       ```  
     - Now, install ngspice using the command below:  
     
-      ```
-      
-      $ sudo apt-get install -y ngspice
-      
+      ```   
+      $ sudo apt-get install -y ngspice    
       ```  
   - **Windows**
     - The eSim installer also installs Ngspice, so one can access ngspice by running the **ngspice.exe** file present in the eSim installation folder.  
@@ -127,12 +115,10 @@ The specifications of the designed Charge Pump can be found below:
     - If you are downloading the ZIP File, then after downloading, extract the contents, and go to libraries. Copy the sky130_fd_pr folder and paste it in the pre_layout folder.  
     - If you are going to clone the PDK, then first open the folder where you have cloned this project, and run the commands below.  
  
-      ```
-      
+      ``` 
       $ cd pre_layout
       
-      $ git clone https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr
-      
+      $ git clone https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr         
       ```  
       
   - **Linux**
@@ -143,129 +129,103 @@ The specifications of the designed Charge Pump can be found below:
 - Before installing, check whether you are in the root directory:  
 
   ```
-  
-  $ cd
-  
+  $ cd  
   ```  
   
 - First, let us run a check on the versions, using the command below:  
 
   ```
-  
-  $ sudo apt-get update
-  
+  $ sudo apt-get update  
   ```  
   
 - ### Git and Make  *(Ignore if already installed)* ###
   - Install Git and Make using the commands below:  
 
-    ```
-    
+    ```    
     $ sudo apt install git
     
-    $ sudo apt install make
-    
+    $ sudo apt install make      
     ```  
 
 - ### Magic VLSI ###
   - Download Magic using the command below:  
 
-    ```
-    
-    $ git clone git://opencircuitdesign.com/magic
-    
+    ```   
+    $ git clone git://opencircuitdesign.com/magic   
     ```  
   
   - Now, navigate to the Magic Folder:  
 
-    ```
-    
-    $ cd magic
-    
+    ```   
+    $ cd magic    
     ```  
   
   - Compile and Install:  
 
-    ```
-    
+    ```   
     $ sudo ./configure
     
     $ sudo make
     
-    $ sudo make install
-    
+    $ sudo make install      
     ```  
   
   - Exit Magic Directory:  
 
     ```
-    
-    $ cd ..
-    
+    $ cd ..  
     ```  
   
 - ### Sky130 PDK and Magic Integration ###  
 
   - First, let us download Sky130 PDK using the following command:  
 
-    ```
-    
-    $ git clone https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr
-    
+    ```  
+    $ git clone https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr  
     ```  
   
   - Next, we we will need OpenPDK to install & generate the required tech files for magic vlsi:  
 
-    ```
-    
+    ``` 
     $ git clone git://opencircuitdesign.com/open_pdks
     
     $ cd open_pdks
     
-    $ git checkout open_pdks-1.0
-    
+    $ git checkout open_pdks-1.0        
     ```  
   
   - Now, we have to configure sky130 PDK:  
 
-    ```
-    
+    ```   
     $ mkdir sky130_target
     
-    $ sudo ./configure --enable-sky130-pdk=<skywater_root_dir>/skywater-pdk/libraries --with-sky130-local-path=<your_target_install_dir>
-    
+    $ sudo ./configure --enable-sky130-pdk=<skywater_root_dir>/skywater-pdk/libraries --with-sky130-local-path=<your_target_install_dir>        
     ```     
     
   > NOTE : For those using home directory do NOT use ~/<your_dir>, please use the full directory /home/username/<your_dir>  
  
   - Next, run the following commands, inside the open_pdks root directory:  
   
-    ```
-    
+    ```    
     $ cd sky130
     
     $ sudo make
     
-    $ sudo make install
-    
+    $ sudo make install    
     ```  
     
   - Integrate Sky130 PDK with Magic. As the skywater tech files are not installed in magic’s library, we need to create a symbolic link in order to use the tech files for drawing layout. This can be done using:  
   
-    ```
-    
-    $ sudo ln -s <sky130A_install_root_dir>/sky130A/libs.tech/magic/* /usr/local/lib/magic/sys/
-    
+    ```    
+    $ sudo ln -s <sky130A_install_root_dir>/sky130A/libs.tech/magic/* /usr/local/lib/magic/sys/   
     ```  
   
   - Now, come back to the current working directory, and check whether the files are properly installed using the command below:  
   
-    ```
-    
+    ``` 
     $ tcsh
     
-    $ sudo magic -T sky130A
-    
+    $ sudo magic -T sky130A   
     ```  
 
 - ### Next Steps: ###  
@@ -290,7 +250,7 @@ The Dickson Charge Pump consists of the pumping capacitors which are arranged in
 ## Clock signal from PFD:  
 The pulses coming from the PFD operate the Charge Pump. According to the target specs, we get pulses of 2MHz frequency and with Vin of 2.1V. This voltage is on par with standard conventions as defined in Semiconductor IP cores - which state that the Vih of PFD pulses is an excess of 30% of Vdd (i.e.) Vih = Vdd + 0.3V. In this case, Vdd is taken as 1.8V hence we expect a Vin of 2.1V. The simulation of the same can be found below. Please note that, the two signals coming from the PFD are complementry to each other in terms of phase are are obtained during the PLL mode.  
 
-![UP and DN](https://github.com/Charaan27/avsddac_1v8_sky130/blob/main/screenshots/pre_lay_updn.jpg)  
+![UP and DN](https://github.com/Charaan27/avsddcp_1v8_sky130/blob/main/screenshots/pre_lay_updn.PNG)  
 
 In order to get the above simulation, please run the command below. Make sure that you are in the project folder.  
 
@@ -311,7 +271,7 @@ The Rise time is found out to be **143us**.
 
 The Pre-Layout output image can be found below:  
 
-![CP_OUT](https://github.com/Charaan27/avsddac_1v8_sky130/blob/main/screenshots/pre_lay_cp_output.jpg)  
+![CP_OUT](https://github.com/Charaan27/avsddcp_1v8_sky130/blob/main/screenshots/pre_lay_cp_output.PNG)  
 
 In order to get the above simulation, please run the command below. Make sure that you are in the project folder.  
 
@@ -319,7 +279,6 @@ In order to get the above simulation, please run the command below. Make sure th
 $ cd pre_layout
 
 $ ngspice pre_layout_output.cir
-
 ```  
 
 # Layout:  
@@ -346,7 +305,6 @@ $ cd ..
 $ cd layout
 
 $ magic -T sky130A.tech
-
 ```    
 
 ## Capacitor:  
@@ -372,7 +330,6 @@ In order to view the layout enter the command below. Please note that you should
 $ cd layout
 
 $ magic ip_final.mag
-
 ```  
 
 > NOTE: The magic layout of the circuit, was carefully made in a way such that no DRC errors would pop up. Based on the DRC errors that came with the consideration of initial model parameters, the model parameters (mainly w and l) were altered such that no DRC errors would appear.  
@@ -400,7 +357,6 @@ $ cd ..
 $ cd post_layout
 
 $ ngspice ip_final_test.spice
-
 ```  
 
 # Future Work  
