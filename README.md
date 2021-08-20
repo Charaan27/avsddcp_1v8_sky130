@@ -360,12 +360,6 @@ The output of the charge pump, is taken across the 5Mohm load resistor. The diff
 To run the post layout simulation enter the following commands.  
 
 ```
-# Coming back to the project directory
-
-$ cd .. 
-
-$ cd post_layout
-
 $ ngspice ip_final_test.spice
 ```  
 
