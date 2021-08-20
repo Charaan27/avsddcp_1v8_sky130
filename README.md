@@ -263,7 +263,7 @@ $ ngspice pre_layout_up_dn.cir
 ## Pre-Layout Output  
 Now we look into the output of the charge pump for 1.8V Vdd and 2.1V Vih. We get a 'pumped' voltage which saturates at 5.3V. We now calculate the rise time which is:  
 
-> Rise Time = (Time taken to reach 90% of output) - (Time taken to reach 10% of output)  
+- Rise Time = (Time taken to reach 90% of output) - (Time taken to reach 10% of output)  
 
 The Rise time is found out to be **143us**.  
 
