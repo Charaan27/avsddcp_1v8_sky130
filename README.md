@@ -110,9 +110,11 @@ The specifications of the designed Charge Pump can be found below:
 - ### Sky130 PDK ###  
   - **Windows**  
     - Download ZIP file from this [repository](https://github.com/google/skywater-pdk).
-    - If you are downloading the ZIP File, then after downloading, extract the contents, and go to libraries. Copy the sky130_fd_pr folder and paste it in your folder where you have cloned/extracted this repo.   
-    - If you are going to clone the PDK, then do it using the command below:  
+    - If you are downloading the ZIP File, then after downloading, extract the contents, and go to libraries. Copy the sky130_fd_pr folder and paste it in the pre_layout folder.  
+    - If you are going to clone the PDK, then first open the folder where you have cloned this project, and run the commands below.  
+ 
       ```
+      $ cd pre_layout
       $ git clone https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr
       ```  
       
@@ -121,6 +123,12 @@ The specifications of the designed Charge Pump can be found below:
 
 ## Layout and Post-Layout (Only on Linux - NOT POSSIBLE ON WINDOWS OS):  
 
+- Before installing, check whether you are in the root directory:  
+
+  ```
+  $ cd
+  ```  
+  
 - First, let us run a check on the versions, using the command below:  
 
   ```
@@ -136,7 +144,7 @@ The specifications of the designed Charge Pump can be found below:
     ```  
 
 - ### Magic VLSI ###
-  - Navigate to the current working directory (where you have cloned this repo) and download Magic using the command below:  
+  - Download Magic using the command below:  
 
     ```
     $ git clone git://opencircuitdesign.com/magic
@@ -167,7 +175,7 @@ The specifications of the designed Charge Pump can be found below:
   - First, let us download Sky130 PDK using the following command:  
 
     ```
-    $ git clone https://github.com/google/skywater-pdk
+    $ git clone https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr
     ```  
   
   - Next, we we will need OpenPDK to install & generate the required tech files for magic vlsi:  
@@ -183,18 +191,18 @@ The specifications of the designed Charge Pump can be found below:
     ```
     $ mkdir sky130_target
     $ sudo ./configure --enable-sky130-pdk=<skywater_root_dir>/skywater-pdk/libraries --with-sky130-local-path=<your_target_install_dir>
-    ```  
-  
-  > NOTE: For those using home directory, do NOT use ~/<your_dir>, please use the full directory: /home/<username>/<your_dir>  
-  
+    ```   
+    
+> NOTE: For those using home directory, do NOT use ~/<your_dir>, please use the full directory: /home//<your_dir>      
+    
   - Next, run the following commands, inside the open_pdks root directory:  
   
     ```
     $ cd sky130
     $ sudo make
     $ sudo make install
-    ```
-  
+    ```  
+    
   - Integrate Sky130 PDK with Magic. As the skywater tech files are not installed in magic’s library, we need to create a symbolic link in order to use the tech files for drawing layout. This can be done using:  
   
     ```
