@@ -1,0 +1,18 @@
+* SPICE3 file created from resfinal.ext - technology: sky130A
+
+.lib "sky130_fd_pr/models/sky130.lib.spice" tt
+
+
+X0 b a gnd sky130_fd_pr__res_high_po_0p69 l=9990
+
+Va a 0 dc 3.3
+Vb b 0 dc 0
+
+.tran 0.1us 10us
+
+.control
+run
+plot V(a)/(-Va#branch)
+.endc
+
+.end
