@@ -457,7 +457,7 @@ $ ngspice ip_final_test.spice
 The output obtained for Vin = 3.3V can be seen below
 
 
-![post_lay_cp_out 3v3](https://github.com/Charaan27/avsddcp_1v8_sky130/blob/main/screenshots/post_lay_cp_output_3v3.PNG)  \
+![post_lay_cp_out 3v3](https://github.com/Charaan27/avsddcp_1v8_sky130/blob/main/screenshots/post_lay_cp_output_3v3.PNG)  
 
 To run the post layout simulation enter the following commands.  
 
