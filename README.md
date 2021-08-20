@@ -5,36 +5,67 @@ In this repository, the design of a Dickson Charge Pump in 130nm tech node - whi
 - [1. Introduction](#Introduction)
 
   - [Dickson Charge Pump in PLLs](#Dickson-Charge-Pump-in-PLLs)
+
 - [2. Specifications](#Specifications)
+
 - [3. Configurations and Open Souce Tools used](#Configurations-and-Open-Souce-Tools-used)
+
 - [4. Installation](#Installation)
+
   - [Clone this project](#Clone-this-project)
+
   - [Pre Layout](#Pre-Layout)
+
     - [eSim](#eSim)
+
     - [Ngspice](#Ngspice)
+
     - [Sky130 PDK](#Sky130-PDK)
+
   - [Layout and Post-Layout](#layout-and-post-layout-only-on-linux---not-possible-on-windows-os)
+
     - [Git and Make](#git-and-make--ignore-if-already-installed)
+
     - [Magic VLSI](#Magic-VLSI)
+
     - [Sky130 PDK and Magic Integration](#Sky130-PDK-and-Magic-Integration)
+
     - [Next Steps](#Next-Steps)
+
 - [Pre Layout](#Pre-Layout)
+
   - [Tools used](#Tools-used)
+
   - [Circuit](#Circuit)
+
   - [Clock signal from PFD](#Clock-signal-from-PFD)
+
   - [Pre-Layout Output](#Pre-Layout-Output)
+
 - [Layout](#Layout)
+
   - [Tools Used](#Tools-Used)
+
   - [Capacitor](#Capacitor)
+
   - [NMOS](#NMOS)
+
   - [Circuit](#Circuit)
+
 - [Post - Layout](#post---layout)
+
   - [Resistor](#Resistor)
+
   - [Charge Pump output](#Charge-Pump-output)
+
 - [Future Work](#Future-Work)
+
 - [Author](#Author)
+
 - [Aknowledgements](#Aknowledgements)
+
 - [References](#References)  
+
 
 # Introduction  
 The Dickson Charge Pump is a DC-DC converter that produces a higher voltage than the supply voltage. Unlike the boost switching DC-DC converters which require large inductors, the Dickson Charge pump is designed using MOSFETs as switches, and they utilize energy-transfer capacitors instead of inductors, therefore the size, non-linearity, and interference issues related to the usage of inductors in ICs are being eliminated. This circuit is widely implemented in various IC applications especially in non-volatile memories like the Flash and EEPROM.
