@@ -193,7 +193,7 @@ The specifications of the designed Charge Pump can be found below:
     $ sudo ./configure --enable-sky130-pdk=<skywater_root_dir>/skywater-pdk/libraries --with-sky130-local-path=<your_target_install_dir>
     ```   
     
-> NOTE: For those using home directory, do NOT use ~/<your_dir>, please use the full directory: /home//<your_dir>      
+> NOTE: For those using home directory, do NOT use ~/<your_dir>, please use the full directory: /home/<username>/<your_dir>      
     
   - Next, run the following commands, inside the open_pdks root directory:  
   
