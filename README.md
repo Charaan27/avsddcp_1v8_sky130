@@ -2,7 +2,7 @@
 In this repository, the design of a Dickson Charge Pump in 130nm tech node - which is suitable for PLL applications is presented. The design was done using open source tools, and the device modeling was done using Sky130 PDK from Google Skywater. The design specs can be viewed [here](https://drive.google.com/file/d/1UTvbswT-GWP-INxl1nJZeUJVQ8TjLF_6/view?usp=sharing).  
 
 # Contents  
-- [Introduction](#Introduction  )
+- [1. Introduction](#Introduction)
 
 # Introduction  
 The Dickson Charge Pump is a DC-DC converter that produces a higher voltage than the supply voltage. Unlike the boost switching DC-DC converters which require large inductors, the Dickson Charge pump is designed using MOSFETs as switches, and they utilize energy-transfer capacitors instead of inductors, therefore the size, non-linearity, and interference issues related to the usage of inductors in ICs are being eliminated. This circuit is widely implemented in various IC applications especially in non-volatile memories like the Flash and EEPROM.
