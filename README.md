@@ -342,6 +342,16 @@ Normally, a Dickson Charge Pump would not require a load resistor, but for simul
 
 ![resistor_op](https://github.com/Charaan27/avsddac_1v8_sky130/blob/main/screenshots/resistor_output.PNG)  
 
+```
+# Coming back to the project directory
+
+$ cd ..
+
+$ cd post_layout
+
+$ ngspice resistor_test.spice
+```  
+
 ## Charge Pump output:  
 The output of the charge pump, is taken across the 5Mohm load resistor. The difference with pre-layout output arises due to the change in model parameters after due consideration of DRC errors. The output voltage saturates around 4.6 - 4.7V. The rise time taken is 14.53us which has huge difference from the pre-layout simulation. This indicates that after layout, the design rises up to output voltage in lesser time.  
 
