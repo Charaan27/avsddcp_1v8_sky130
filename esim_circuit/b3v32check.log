@@ -1,0 +1,6 @@
+BSIM3 Model (Supports: v3.2, v3.2.2, v3.2.3, v3.2.4)
+Parameter Checking.
+Model = cmosn
+W = 2.4e-007, L = 1.8e-007, M = 1
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
