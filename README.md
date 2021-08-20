@@ -260,6 +260,18 @@ $ cd pre_layout
 $ ngspice pre_layout_up_dn.cir
 ```  
 
+The output of UP and DN signals, for Vin = 3.3V can be seen below  
+
+![UP and DN 3v3](https://github.com/Charaan27/avsddcp_1v8_sky130/blob/main/screenshots/pre_lay_updn_3v3.PNG)  
+
+In order to get the above simulation, please run the command below.  
+
+```
+$ cd pre_layout
+
+$ ngspice pre_layout_output_3v3_up_dn.cir
+```  
+
 ## Pre-Layout Output  
 Now we look into the output of the charge pump for 1.8V Vdd and 2.1V Vih. We get a 'pumped' voltage which saturates at 5.3V. We now calculate the rise time which is:  
 
@@ -280,6 +292,19 @@ $ cd pre_layout
 
 $ ngspice pre_layout_output.cir
 ```  
+
+The output obtained for Vin = 3.3V can be seen below
+
+![CP_OUT 3v3](https://github.com/Charaan27/avsddcp_1v8_sky130/blob/main/screenshots/pre_lay_cp_output_3v3.PNG)  
+
+In order to get the above simulation, please run the command below. Make sure that you are in the project folder.  
+
+```
+$ cd pre_layout
+
+$ ngspice pre_layout_output_3v3.cir
+```  
+
 
 # Layout:  
 
@@ -361,6 +386,17 @@ To run the post layout simulation enter the following commands.
 
 ```
 $ ngspice ip_final_test.spice
+```  
+
+The output obtained for Vin = 3.3V can be seen below
+
+
+![post_lay_cp_out 3v3](https://github.com/Charaan27/avsddcp_1v8_sky130/blob/main/screenshots/post_lay_cp_output_3v3.PNG)  \
+
+To run the post layout simulation enter the following commands.  
+
+```
+$ ngspice ip_final_test_3v3.spice
 ```  
 
 # Future Work  
