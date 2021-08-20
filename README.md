@@ -292,6 +292,14 @@ The pulses coming from the PFD operate the Charge Pump. According to the target 
 
 ![UP and DN](https://github.com/Charaan27/avsddac_1v8_sky130/blob/main/screenshots/pre_lay_updn.jpg)  
 
+In order to get the above simulation, please run the command below. Make sure that you are in the project folder.  
+
+```
+$ cd pre_layout
+
+$ ngspice pre_layout_up_dn.cir
+```  
+
 ## Pre-Layout Output  
 Now we look into the output of the charge pump for 1.8V Vdd and 2.1V Vih. We get a 'pumped' voltage which saturates at 5.3V. We now calculate the rise time which is:  
 
