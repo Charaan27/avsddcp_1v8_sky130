@@ -313,7 +313,7 @@ The specifications of the designed Charge Pump can be found below:
 
 - ### Next Steps: ###  
 
-  - Now, you should copy the sky130_fd_pr folder into the layout and post_layout files present in the folder where you cloned this project.  
+  - Now, you should copy the sky130_fd_pr folder into the pre_layout, layout and post_layout files present in the folder where you cloned this project.  
 
 # Pre Layout:  
 
