@@ -1,4 +1,21 @@
 # 130nm Dickson Charge Pump for PLL applications  
+
+</br>
+
+</br>
+
+![Heading](https://github.com/Charaan27/avsddcp_1v8_sky130/blob/main/screenshots/heading.png)  
+
+</br>
+
+</br>
+
+[![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/Naereen/badges/)
+![Last Commit](https://img.shields.io/github/last-commit/Charaan27/avsddcp_1v8_sky130?color=green)
+![license](https://img.shields.io/github/license/Charaan27/avsddcp_1v8_sky130?color=blue)  
+
+</br>
+
 In this repository, the design of a Dickson Charge Pump in 130nm tech node - which is suitable for PLL applications is presented. The design was done using open source tools, and the device modeling was done using Sky130 PDK from Google Skywater. The design specs can be viewed [here](https://drive.google.com/file/d/1UTvbswT-GWP-INxl1nJZeUJVQ8TjLF_6/view?usp=sharing).  
 
 # Contents  
