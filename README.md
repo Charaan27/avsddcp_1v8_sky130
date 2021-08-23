@@ -231,6 +231,13 @@ The specifications of the designed Charge Pump can be found below:
     ```  
 
 - ### Magic VLSI ###
+
+  - Some dependencies required to run magic vlsi do not come preinstalled. please enter the following command line in your terminal to install: 
+
+    ```
+    $ sudo apt update && sudo apt install m4 tcsh csh libx11-dev tcl-dev tk-dev libcairo2-dev libncurses-dev libglu1-mesa-dev freeglut3-dev mesa-common-dev
+    ```
+    
   - Download Magic using the command below:  
 
     ```   
